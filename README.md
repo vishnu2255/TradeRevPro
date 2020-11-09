@@ -1,5 +1,5 @@
 Clone the project:
-Branch Name: master
+Branch Name: main
 
 Required for setup:
 

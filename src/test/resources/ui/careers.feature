@@ -1,7 +1,6 @@
 @smoke
 Feature: Validate careers page and filtering
 
-
   @career
   Scenario Outline: UI - Check Canada TradeRev careers page is displayed properly
     Given I launch TradeRev home page

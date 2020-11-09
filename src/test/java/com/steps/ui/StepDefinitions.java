@@ -25,30 +25,52 @@ public class StepDefinitions extends DriverFactory {
     }
 
     @Given("^I launch TradeRev home page$")
-    public void i_launch_TradeRev_home_page() throws Exception {
+    public void i_launch_TradeRev_home_page() {
         String url = testDataReader.readData("url");
         driver.navigate().to(url.trim());
     }
 
     @Given("^Navigate to (.*) page$")
-    public void navigate_to_careers_page(String section) throws Exception {
+    public void navigate_to_careers_page(String section){
 
         switch (section.trim().toLowerCase()){
             case "careers":
                 homePage.navigateToCareersPage();
                 break;
+            case "news":
+                System.out.println("news");
+                break;
+            case "faq":
+                System.out.println("faq");
+                break;
+            case "contact":
+                System.out.println("contact");
+                break;
+            case "about us":
+                System.out.println("about us");
+                break;
             default:
                 System.out.println("not a valid section");
         }
-
-
     }
 
     @Given("^Validate the (.*) page is displayed correctly$")
-    public void validate_the_careers_page_is_displayed_correctly(String section) throws Exception {
+    public void validate_the_careers_page_is_displayed_correctly(String section) {
         switch (section.trim().toLowerCase()){
             case "careers":
                 careersPage.validateCareersPageLoaded();
+                break;
+            case "news":
+                System.out.println("news");
+                break;
+            case "faq":
+                System.out.println("faq");
+                break;
+            case "contact":
+                System.out.println("contact");
+                break;
+            case "about us":
+                System.out.println("about us");
                 break;
             default:
                 System.out.println("not a valid section");
@@ -56,7 +78,7 @@ public class StepDefinitions extends DriverFactory {
     }
 
     @When("^I click on (.*) job opportunities$")
-    public void i_click_on_canadian_job_opportunities(String country) throws Exception {
+    public void i_click_on_canadian_job_opportunities(String country) {
 
         if(country.toLowerCase().equalsIgnoreCase("canadian")){
             careersPage.navigateToCanadianJobPortal();
@@ -68,25 +90,25 @@ public class StepDefinitions extends DriverFactory {
     }
 
     @Then("^Validate (.*) job site is displayed correctly$")
-    public void validate_canadian_job_site_is_displayed_correctly(String country) throws Exception {
+    public void validate_canadian_job_site_is_displayed_correctly(String country) {
         if(country.toLowerCase().equalsIgnoreCase("canadian")){
             canadianJobPage.canadianJobPortalIsLoaded();
         }
     }
 
     @Given("^I launch TradeRev job portal$")
-    public void i_launch_TradeRev_job_portal() throws Exception {
+    public void i_launch_TradeRev_job_portal() {
         String url = testDataReader.readData("jobsportal");
         driver.navigate().to(url.trim());
     }
 
     @When("^I filter the search results by (.*) and (.*)$")
-    public void i_filter_the_search_results_by_(String city, String team) throws Exception {
+    public void i_filter_the_search_results_by_(String city, String team){
         canadianJobPage.searchByCityAndTeam(city.trim(),team.trim());
     }
 
     @Then("^Validate the listed jobs belong to (.*) and (.*)$")
-    public void validate_the_listed_jobs_belong_to_Toronto_Ontario_Canada_and_Engineering(String city, String team) throws Exception {
+    public void validate_the_listed_jobs_belong_to_Toronto_Ontario_Canada_and_Engineering(String city, String team) {
         canadianJobPage.validateListedJobsBelongToCityAndTeam(city.trim(),team.trim());
     }
 
