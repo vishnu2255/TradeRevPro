@@ -1,5 +1,5 @@
 Clone the project:
-Branch Name: master
+Branch Name: main
 
 Required for setup:
 
@@ -21,7 +21,7 @@ IDE: Intellij
 Plugins: Cucumber for Java, gherkin
 
 Compile the project: 
-Navigate to the project folder adn run the following command.
+Navigate to the project located folder and run the following command.
 mvn clean install
 
 How to Run Scripts:
